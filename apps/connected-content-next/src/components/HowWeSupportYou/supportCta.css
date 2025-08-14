@@ -1,0 +1,45 @@
+.support-cta-small {
+    display: flex;
+    position: relative;
+    padding: var(--building-component-padding);
+    font-style: normal;
+    font-weight: var(--font-bold);
+    line-height: 1.375;
+    cursor: pointer
+}
+
+.support-cta-small--forum {
+    background-color: var(--deep-blue)
+}
+
+.support-cta-small--support-line {
+    background-color: var(--forget-me-not-blue)
+}
+
+.support-cta-small__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-right: var(--space-scale-2)
+}
+
+.support-cta-small__icon .icon,.support-cta-small__icon img {
+    height: 3.6rem;
+    width: 3.6rem
+}
+
+.support-cta-small__content {
+    color: var(--white);
+    align-self: center;
+    width: 100%
+}
+
+.support-cta-small__content .link {
+    display: flex;
+    flex-direction: column
+}
+
+.support-cta-small__content .link:hover {
+    text-decoration-thickness: .2rem
+}

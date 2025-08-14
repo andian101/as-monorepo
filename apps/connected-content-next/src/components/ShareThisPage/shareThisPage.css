@@ -1,0 +1,138 @@
+.share-and-print__buttons-wrapper {
+    background-color: var(--component-blue);
+    padding: var(--building-component-padding)
+}
+
+.share-and-print__buttons-wrapper:last-child {
+    margin-top: var(--building-vertical-component-spacing)
+}
+
+.share-and-print__buttons-wrapper .heading {
+    color: var(--black);
+    margin-bottom: var(--space-scale-3)
+}
+
+.share-and-print__buttons-wrapper .button {
+    margin-bottom: var(--space-scale-3);
+    padding: var(--space-scale-2)
+}
+
+.share-and-print__buttons-wrapper .button::before {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    height: 3.3rem;
+    width: 3.3rem;
+    display: inline-flex;
+    margin-right: var(--space-scale-2)
+}
+
+.share-and-print__buttons-wrapper .button .a2a_svg {
+    display: none
+}
+
+.share-and-print__buttons-wrapper .a2a_button_email::before {
+    background-image: url("../../images/icons/email.svg");
+    width: 2.7rem
+}
+
+.share-and-print__buttons-wrapper .a2a_button_whatsapp::before {
+    background-image: url("../../images/icons/whatsapp.svg")
+}
+
+.share-and-print__buttons-wrapper .a2a_button_facebook_messenger::before {
+    background-image: url("../../images/icons/messenger.svg")
+}
+
+.share-and-print__buttons-wrapper .a2a_button_print {
+    margin-bottom: 0
+}
+
+.share-and-print__buttons-wrapper .a2a_button_print::before {
+    background-image: url("../../images/icons/printer.svg")
+}
+
+.share-and-print__button-list li {
+    margin-bottom: 0
+}
+
+.share-and-print__button-list li:last-child .button {
+    margin-bottom: 0
+}
+
+@media(min-width: 768px) {
+    .share-and-print__buttons-wrapper:first-child {
+        display:flex;
+        align-items: center;
+        gap: var(--building-gutter-spacing)
+    }
+
+    .share-and-print__buttons-wrapper .heading {
+        flex-shrink: 0;
+        margin-bottom: 0
+    }
+
+    .share-and-print__button-list {
+        display: flex;
+        align-items: center;
+        gap: var(--building-gutter-spacing);
+        justify-content: space-between;
+        width: 100%
+    }
+
+    .share-and-print__button-list li {
+        width: 33.33%
+    }
+
+    .share-and-print__button-list .button {
+        margin-bottom: 0;
+        width: 100%
+    }
+}
+
+@media(min-width: 1048px) {
+    .share-and-print,.share-and-print__wrapper,.share-and-print__buttons-wrapper,.share-and-print__button-list {
+        display:flex;
+        align-items: center
+    }
+
+    .share-and-print,.share-and-print__wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between
+    }
+
+    .share-and-print__wrapper {
+        align-items: normal;
+        width: 100%
+    }
+
+    .share-and-print__buttons-wrapper:first-child {
+        flex: 1;
+        margin-right: var(--building-gutter-spacing)
+    }
+
+    .share-and-print__buttons-wrapper:last-child {
+        margin-top: 0
+    }
+
+    .share-and-print__buttons-wrapper:last-child .button {
+        padding-left: var(--space-scale-5);
+        padding-right: var(--space-scale-5)
+    }
+}
+
+@media(min-width: 1440px) {
+    .share-and-print__buttons-wrapper .button {
+        font-size:var(--body-copy);
+        line-height: 1.579
+    }
+
+    .share-and-print__buttons-wrapper:last-child {
+        min-width: 31rem
+    }
+
+    .share-and-print__buttons-wrapper:last-child .button {
+        width: 100%
+    }
+}

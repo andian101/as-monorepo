@@ -1,0 +1,38 @@
+.tiles-grid {
+    background-color: var(--light-grey);
+    padding: var(--building-section-top-padding) 0 var(--building-section-bottom-padding)
+}
+
+.tiles-grid .heading--main {
+    color: var(--deep-blue);
+    margin-bottom: 0
+}
+
+.tiles-grid__subtitle {
+    margin-top: var(--text-spacing-h3);
+    margin-bottom: 0
+}
+
+.tiles-grid__cards {
+    margin-top: var(--building-vertical-component-spacing);
+    gap: var(--building-vertical-component-spacing)
+}
+
+@media(min-width: 768px) {
+    .tiles-grid__cards {
+        gap:0
+    }
+}
+
+@media print {
+    .tiles-grid {
+        background-color: rgba(0,0,0,0);
+        margin-bottom: 0;
+        padding: 0
+    }
+
+    .tiles-grid__subtitle {
+        margin-top: 0;
+        margin-bottom: 15px
+    }
+}

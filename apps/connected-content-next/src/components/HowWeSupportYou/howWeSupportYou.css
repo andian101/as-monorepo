@@ -1,0 +1,121 @@
+.how-we-support-you {
+    border: .1rem solid var(--deep-blue)
+}
+
+.how-we-support-you__heading {
+    background-color: var(--white);
+    border-bottom: .1rem solid var(--deep-blue);
+    color: var(--forget-me-not-blue);
+    margin-bottom: 0;
+    padding: var(--building-component-padding)
+}
+
+.how-we-support-you__wrapper {
+    padding: var(--building-component-padding)
+}
+
+.how-we-support-you__text {
+    margin-bottom: var(--building-gutter-spacing)
+}
+
+.how-we-support-you__text p {
+    margin-bottom: var(--building-gutter-spacing)
+}
+
+.how-we-support-you__text p:last-child {
+    margin-bottom: 0
+}
+
+.how-we-support-you__text p+ul,.how-we-support-you__text p+ol {
+    margin-top: 0;
+    margin-bottom: var(--building-gutter-spacing)
+}
+
+.how-we-support-you__text p+ul li,.how-we-support-you__text p+ol li {
+    margin-bottom: 0
+}
+
+.how-we-support-you__text ul:last-child,.how-we-support-you__text ol:last-child {
+    margin-bottom: 0
+}
+
+.how-we-support-you__ctas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--building-gutter-spacing)
+}
+
+@media(min-width: 1048px) {
+    .how-we-support-you__ctas {
+        flex-direction:row
+    }
+
+    .how-we-support-you__ctas .support-cta-small {
+        width: 50%
+    }
+}
+
+@media print {
+    .how-we-support-you {
+        border: 0;
+        margin-bottom: 30px
+    }
+
+    .how-we-support-you .heading {
+        border-bottom: 0;
+        padding: 0
+    }
+
+    .how-we-support-you .link--overlay::after {
+        content: none
+    }
+
+    .how-we-support-you__text {
+        margin-bottom: 10px;
+        padding: 0
+    }
+
+    .how-we-support-you__ctas {
+        display: block;
+        padding: 0
+    }
+
+    .how-we-support-you__ctas .support-cta-small__icon {
+        display: none
+    }
+
+    .how-we-support-you__ctas .support-cta-small {
+        background-color: rgba(0,0,0,0);
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal;
+        padding: 0;
+        width: 100%
+    }
+
+    .how-we-support-you__ctas .support-cta-small--support-line {
+        margin-top: 1.6rem
+    }
+
+    .support-cta-small__content .link {
+        flex-direction: row
+    }
+
+    .support-cta-small__content .link span {
+        margin-bottom: 10px;
+        width: auto
+    }
+
+    .support-cta-small__content .link span:last-child {
+        margin-left: 5px;
+        margin-bottom: 0
+    }
+
+    .support-cta-small__content .link .link__content::after {
+        content: none
+    }
+
+    .support-cta-small--forum .link .field--name-field-heading::after {
+        content: " >"
+    }
+}

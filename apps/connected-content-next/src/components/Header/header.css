@@ -1,0 +1,267 @@
+.header {
+  box-shadow: 0 1.6rem 1.6rem -1.6rem rgba(0,0,0,.3);
+  margin-bottom: 3rem;
+}
+.header__top {
+  display: flex;
+  align-items: center;
+  min-height: 8rem;
+}
+.header__left-col,
+.header__right-col {
+  padding: 1.2rem;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.header__logo a {
+  display: inline-block;
+}
+.header__logo picture {
+  aspect-ratio: 20/3;
+  width: 18.5rem;
+}
+.header__desktop-menu,
+.header__mobile-menu {
+  border-top: .1rem solid var(--light-grey);
+}
+.header__desktop-menu {
+  display: none;
+}
+.header__mobile-menu .menu--mobile:not(.menu--sub) {
+  display: none;
+}
+.header__mobile-menu.header__mobile-menu--open .menu--mobile:not(.menu--sub) {
+  display: block;
+}
+.header__mobile-menu__buttons {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.header__mobile-menu__buttons .mobile-menu__toggle {
+  flex: 1;
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding: var(--space-scale-3) 1.2rem;
+  font-size: var(--body-medium);
+  text-decoration: none;
+  border-radius: 0;
+}
+.header__mobile-menu__buttons .mobile-menu__toggle .icon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: var(--space-scale-1);
+  transform: rotateZ(90deg);
+}
+.header__mobile-menu__buttons .mobile-menu__toggle .close {
+  display: none;
+}
+.header__mobile-menu__buttons .mobile-menu__toggle,
+.header__mobile-menu__buttons .mobile-menu__toggle:hover,
+.header__mobile-menu__buttons .mobile-menu__toggle:focus,
+.header__mobile-menu__buttons .mobile-menu__toggle:active {
+  color: var(--forget-me-not-blue);
+}
+.header__mobile-menu__buttons .mobile-menu__toggle .icon,
+.header__mobile-menu__buttons .mobile-menu__toggle:hover .icon,
+.header__mobile-menu__buttons .mobile-menu__toggle:focus .icon,
+.header__mobile-menu__buttons .mobile-menu__toggle:active .icon {
+  color: var(--forget-me-not-blue);
+}
+.header__mobile-menu__buttons .mobile-menu__toggle[aria-expanded=true] {
+  background-color: var(--light-grey);
+}
+.header__mobile-menu__buttons .mobile-menu__toggle[aria-expanded=true] .open {
+  display: none;
+}
+.header__mobile-menu__buttons .mobile-menu__toggle[aria-expanded=true] .close {
+  display: block;
+}
+.header__mobile-menu__buttons .mobile-menu__action {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  flex-shrink: 0;
+  width: auto;
+  padding: .6rem;
+  border-radius: 0;
+  border-left: .1rem solid var(--light-grey);
+  font-size: 1.3rem;
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+  text-decoration: none;
+}
+.header__mobile-menu__buttons .mobile-menu__action.button .icon {
+  width: 2rem;
+}
+.header__mobile-menu__buttons .mobile-menu__action .icon {
+  margin: 0;
+  height: 2.4rem;
+  width: 2.4rem;
+  color: var(--black);
+}
+.header__right-col {
+  display: flex;
+  align-items: flex-end;
+}
+.header__right-col .menu {
+  display: none;
+}
+.header__right-col .menu__link {
+  background-color: var(--deep-blue);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--font-bold);
+  line-height: 2.375rem;
+  padding: .94rem 2.85rem;
+  text-decoration: none;
+}
+.header__right-col .menu__link:hover,
+.header__right-col .menu__link:focus {
+  text-decoration: underline;
+}
+.header__right-col .menu__item:nth-child(3) .menu__link {
+  background-color: var(--forget-me-not-blue);
+  padding-left: var(--space-scale-3);
+  padding-right: var(--space-scale-3);
+}
+.header__right-col .menu__item:nth-child(3) .menu__link::after {
+  content: "";
+  display: inline-block;
+  border-top: .2rem solid var(--white);
+  border-right: .2rem solid var(--white);
+  width: .8rem;
+  height: .8rem;
+  border-radius: 10%;
+  transform: rotate(45deg);
+  margin-left: .7rem;
+}
+.header__support-line {
+  display: none;
+}
+.header__donate-button p {
+  margin: 0;
+}
+.header__donate-button .button {
+  border-radius: 0;
+  padding-left: var(--space-scale-2);
+  padding-right: var(--space-scale-2);
+  text-align: center;
+}
+@media (min-width: 380px) {
+  .header__donate-button .button {
+    padding-left: var(--space-scale-4);
+    padding-right: var(--space-scale-4);
+  }
+}
+.header__search {
+  display: none;
+  width: 100%;
+  background-color: #eff6ff;
+  padding: 2rem;
+}
+.header__search form {
+  display: flex;
+}
+.header__search .form-item--textfield__item {
+  margin: 0;
+  width: 100%;
+}
+.header__search .form-item--textfield__item .form-text {
+  border: .1rem solid #cdcdcd;
+  margin: 0;
+  padding: 1.2rem;
+}
+.header__search .form-submit {
+  background-image: url("../../images/icons/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 55%;
+  border-radius: 0;
+  font-size: 0;
+  height: 4.8rem;
+  width: 4.8rem;
+  padding: 0;
+}
+.header__search--open {
+  display: block;
+}
+@media (min-width: 1048px) {
+  .header__top {
+    min-height: 0;
+  }
+  .header__desktop-menu {
+    display: block;
+  }
+  .header__mobile-menu {
+    display: none;
+  }
+  .header__logo picture {
+    aspect-ratio: 43/25;
+    width: auto;
+  }
+  .header__right-col {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .header__right-col .menu {
+    display: flex;
+  }
+  .header__right-col__bottom {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0;
+  }
+  .header__support-line {
+    display: flex;
+    align-items: center;
+    font-size: 2.28rem;
+    font-weight: var(--font-bold);
+  }
+  .header__support-line::before {
+    content: "";
+    background-image: url("../../images/phone-symbol-icon.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    height: 3rem;
+    width: 3rem;
+    display: block;
+    margin-right: 1rem;
+  }
+  .header__support-line p {
+    margin: 0;
+  }
+  .header__donate-button .button {
+    font-size: var(--body-large);
+    line-height: 3.5625rem;
+    height: 5.7rem;
+    margin-left: 3rem;
+    padding-left: 3.8rem;
+    padding-right: 3.8rem;
+  }
+  .header__search {
+    background-color: rgba(0,0,0,0);
+    display: block;
+    flex: 1;
+    margin-left: 2.85rem;
+    padding: 0;
+    width: auto;
+  }
+  .header__search .form-item--textfield__item {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header__search .form-item--textfield__item .form-text {
+    max-width: 30rem;
+  }
+  .header__search .form-submit {
+    height: 5.7rem;
+    width: 5.2rem;
+    flex-shrink: 0;
+  }
+}
