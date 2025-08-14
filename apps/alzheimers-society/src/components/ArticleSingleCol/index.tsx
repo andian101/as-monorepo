@@ -1,4 +1,4 @@
-import { Accordian } from "../Accordian";
+import { Accordian } from "../../../../../packages/components/Accordian";
 import { Hero } from "../Hero";
 import { HowWweSupportYou } from "../HowWeSupportYou";
 import { LargeLinks } from "../LargeLinks";
