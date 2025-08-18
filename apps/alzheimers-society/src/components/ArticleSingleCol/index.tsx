@@ -1,4 +1,5 @@
-import { Accordian } from "../../../../../packages/components/Accordian";
+// import { Accordian } from "../../../../../packages/components/Accordian";
+// import { Button } from "../../../../../packages/ui/src/stories/Button";
 import { Hero } from "../Hero";
 import { HowWweSupportYou } from "../HowWeSupportYou";
 import { LargeLinks } from "../LargeLinks";
@@ -17,6 +18,7 @@ export const Article = ({ data }: ArticleProps) => {
       data-history-node-id='961'
       className='node node--type-information-page node--view-mode-full'
     >
+      {/* <Button label='Hello wooorld' onClick={() => console.log("cleekd")} /> */}
       {data?.hero?.text.json && data?.hero?.heroImage?.url && (
         <Hero
           content={documentToReactComponents(data.hero?.text.json)}
@@ -65,19 +67,19 @@ export const Article = ({ data }: ArticleProps) => {
 
             <div className='field field--name-field-main-content field--type-entity-reference-revisions field--label-hidden field__items'>
               {data?.articleElementsCollection.items.map((item, index) => {
-                if (item.__typename === "Accordian") {
-                  return (
-                    <Accordian
-                      key={index}
-                      title={item.title}
-                      content={
-                        item.content
-                          ? documentToReactComponents(item.content.json)
-                          : null
-                      }
-                    />
-                  );
-                }
+                // if (item.__typename === "Accordian") {
+                //   return (
+                //     <Accordian
+                //       key={index}
+                //       title={item.title}
+                //       content={
+                //         item.content
+                //           ? documentToReactComponents(item.content.json)
+                //           : null
+                //       }
+                //     />
+                //   );
+                // }
 
                 if (item.__typename === "TextField" && item.content) {
                   return (
