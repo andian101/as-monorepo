@@ -1,0 +1,44 @@
+.brand-flex-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.brand-flex-holder {
+    display: inline;
+    width: 100%;
+}
+.brand-flex-item {
+    flex: 31% !important;
+    text-align: left;
+    margin: 0.3rem;
+    padding: 12px 30px;
+}
+.side-borders {
+    border-left: solid 1px #207eef;
+    border-right: solid 1px #207eef;
+
+}
+.brand-flex-item {
+    color: #002877;
+    font-weight: 800;
+    line-height: 1;
+    font-size: 3rem;
+}
+.brand-flex-item strong,
+.brand-flex-item b {
+    color: #207eef;
+}
+@media only screen and (max-width: 650px) {
+    .side-borders {
+        border-top: solid 1px #207eef;
+        border-bottom: solid 1px #207eef;
+        border-left: none;
+        border-right: none;
+ 
+    }
+    
+    .brand-flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,11 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const GET_ARTICLE = gql`
-  query GetArticleBySlug($slug: String!) {
-    articlePageCollection(where: { slug: $slug }, limit: 1) {
+  query GetArticleBySlug($slug: String!, $locale: String) {
+    articlePageCollection(where: { slug: $slug }, limit: 1, locale: $locale) {
       items {
         layout
         descriptionTitle
+
         descriptionContent {
           json
         }
@@ -27,10 +28,7 @@ export const GET_ARTICLE = gql`
           text {
             json
           }
-          heroImage {
-            fileName
-            url
-          }
+          image
         }
         articleElementsCollection {
           items {
@@ -55,7 +53,126 @@ export const GET_ARTICLE = gql`
             }
           }
         }
+
+        redirect {
+          slug
+        }
+
+        shopCollection {
+          items {
+            cardTitle_data {
+              id
+              title
+              description
+              onlineStoreUrl
+              featuredImage {
+                url
+              }
+            }
+          }
+        }
       }
     }
   }
 `;
+
+export const GET_HOMEPAGE = gql`
+  query GetHomePage($locale: String) {
+    homePageCollection(limit: 1, locale: $locale) {
+      items {
+        homepageHeroLink
+        homepageHeroImage
+        homepageHeroTitle
+        homepageHeroButton
+        homepageHeroInfoText
+
+        homepageBullet1 {
+          json
+        }
+        homepageBullet2 {
+          json
+        }
+        homepageBullet3 {
+          json
+        }
+        whatWereDoingCardsCollection {
+          items {
+            __typename
+            ... on Card {
+              cardLink
+              cardTitle
+              cardImage
+              cardContent {
+                json
+              }
+              cardButtonText
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_NAV = gql`
+  query GetLevels {
+    level1Collection {
+      items {
+        title
+        levelsCollection {
+          items {
+            _id
+            sys {
+              id
+            }
+            title
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_ALL_SUB_NAV = gql`
+  query GetAllLevel2 {
+    level2Collection(limit: 1) {
+      items {
+        title
+        _id
+        list1Collection {
+          items {
+            descriptionTitle
+            slug
+          }
+        }
+        list2Collection {
+          items {
+            descriptionTitle
+            slug
+          }
+        }
+        articleCollection {
+          items {
+            descriptionTitle
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
+
+// export const GET_SUB_NAV = gql`
+//   query GetSingleLevel2ById($id: String!) {
+//     level2(id: $id) {
+//       _id
+//       title
+//       articleCollection {
+//         items {
+//           descriptionTitle
+//           slug
+//         }
+//       }
+//     }
+//   }
+// `;

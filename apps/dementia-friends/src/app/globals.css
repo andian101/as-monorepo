@@ -1,0 +1,357 @@
+@import url("//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+@import url("//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url("https://www.dementiafriends.org.uk/resource/DF_CSS_Stylesheet");
+@import url("//code.jquery.com/ui/1.14.1/themes/smoothness/jquery-ui.css");
+@import url("https://www.dementiafriends.org.uk/resource/1585079598000/edt_styles_css");
+
+@media (max-width: 667px){
+.mobile-spacer {
+margin-top: 15px !important;
+}
+}
+@media only screen and (min-width: 768px)and (max-device-width: 1023px) and (orientation:portrait){
+.newsletter-subscribe.col-xs-12.col-sm-12.col-md-12{
+text-align: right;
+margin: 5px;
+}
+}
+
+
+@media (max-width: 991px) {
+.navbar-nav>li {
+  left: 0 !important;
+
+}
+}
+
+@media (max-width: 991px) {
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>li>a.twitter,
+.navbar-default .navbar-nav>li>a.facebook,
+.navbar-default .navbar-nav>li>a.blog {
+  background: #1c1463;
+  border: 0pt none;
+  color: #fff;
+}
+}
+.navbar-toggler {
+background-color: #fff;
+margin: .3rem;
+}
+
+ul.dropdown-menu {
+border-radius: 0px 0 11px 11px;
+}
+
+.navbar-default .navbar-nav .dropdown-menu li a.dropdown-item {
+padding: .5rem 2rem;
+}
+
+.navbar-default .navbar-nav a.dropdown-item {
+padding: .5rem 2rem;
+}
+
+
+.banner-button {
+  position: absolute;
+  z-index: 1001;
+  bottom: 10%;
+  right: 5%;
+}
+.banner-button .btn {
+  font-size: 1.5rem;
+}
+.banner-image {
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+ .banner-button .btn {
+  font-size: 0.9rem;
+}
+}
+
+.footer {
+  border-top: none !important;
+}
+
+:root {
+  --black: #000;
+  --grey-dark: #414042;
+  --grey: #f5f5f5;
+  --white: #fff;
+  --deep-green: #2e6435;
+  --purple: #8c4488;
+  --deep-red: #d62816;
+  --deep-yellow: #ff9500;
+  --forget-me-not-yellow: #ffc800;
+  --deep-blue: #002877;
+  --forget-me-not-blue: #207eff;
+  --light-blue: #d2e5ff;
+  --component-blue: #eef6ff;
+  --bright-green: #5ec26c;
+  --light-green: #e3f3e3;
+  --light-yellow: #ffe5a5;
+  --bright-grey: #93a0af;
+  --deep-grey: #2d3e53;
+  --light-grey: #e7eaed;
+  --link-default: var(--deep-blue);
+  --link-hover: var(--deep-blue);
+  --link-visited: var(--purple);
+  --link-active-outline: var(--deep-blue);
+  --form-border: #000;
+  --form-background: #eee;
+  --status-color: #42a877;
+  --warning-color: #e0ac00;
+  --error-color: #e34f4f;
+  --button-bg-default: var(--forget-me-not-yellow);
+  --button-text-default: var(--deep-blue);
+  --button-hover-bg-default: var(--deep-yellow);
+  --button-hover-text-default: var(--deep-blue);
+  --button-outline-default: var(--black);
+  --button-active-bg-default: var(--deep-yellow);
+  --button-active-text-default: var(--deep-blue);
+  --button-secondary-bg: var(--white);
+  --button-secondary-color: var(--bright-blue);
+  --button-secondary-hover-bg: var(--bright-blue);
+  --button-secondary-hover-color: var(--white);
+  --button-secondary-outline: var(--black);
+  --button-secondary-active-bg: var(--bright-orange);
+  --button-secondary-active-color: var(--black);
+  --table-default-bg: var(--white);
+  --table-bg-inverse: var(--form-background);
+  --table-default-heading-bg: var(--white);
+  --table-border: var(--deep-grey);
+  --font-body: "ASTTCommons", sans-serif;
+  --font-heading: "ASTTCommons", sans-serif;
+  --font-bold: 800;
+  --font-semibold: 700;
+  --font-medium: 500;
+  --font-regular: 400;
+  --font-light: 300;
+  --space-scale-0: 0;
+  --space-scale-1: .4rem;
+  --space-scale-2: .8rem;
+  --space-scale-3: 1.6rem;
+  --space-scale-4: 2.4rem;
+  --space-scale-5: 3.2rem;
+  --space-scale-6: 4rem;
+  --space-scale-7: 4.8rem;
+  --space-scale-8: 5.6rem;
+  --space-scale-9: 6.4rem;
+  --space-scale-10: 7.2rem;
+  --space-scale-11: 8rem;
+  --space-scale-12: 8.8rem;
+  --space-scale-13: 9.6rem;
+  --text-spacing-h1: var(--space-scale-5);
+  --text-spacing-h2: var(--space-scale-4);
+  --text-spacing-h3: var(--space-scale-3);
+  --text-spacing-h4: var(--space-scale-3);
+  --text-spacing-body: var(--space-scale-3);
+  --building-component-padding: var(--space-scale-3);
+  --building-section-top-padding: var(--space-scale-5);
+  --building-section-bottom-padding: var(--space-scale-7);
+  --building-vertical-component-spacing: var(--space-scale-5);
+  --building-gutter-spacing: var(--space-scale-3);
+  --building-vertical-component-gap: var(--space-scale-7);
+  --border-radius: .2rem;
+  --card-border: .1rem solid var(--bright-grey);
+  --card-border-hover: .1rem solid var(--deep-blue);
+  --border-link: .1rem solid var(--deep-blue);
+  --text-decoration-link: solid underline .1rem;
+  --box-shadow-default: 0 .4rem .8rem 0 rgba(0, 0, 0, .15);
+  --button-shadow-down: 0 .2rem .5rem rgba(18, 41, 64, .2);
+  --phone: 0;
+  --phone-wide: 380px;
+  --tablet-small: 600px;
+  --tablet: 768px;
+  --desktop-small: 1220px;
+  --desktop: 1320px;
+  --desktop-wide: 1320px;
+  --grid-columns: 12;
+  --page-content: 980px;
+  --heading--title: 4.2rem;
+  --heading--main: 3.6rem;
+  --heading--sub: 3rem;
+  --heading--small: 2.4rem;
+  --heading--xsmall: 2rem;
+  --heading--tiny: 1.8rem;
+  --body-large: 2.4rem;
+  --body-medium: 2rem;
+  --body-copy: 1.9rem;
+  --body-small: 1.6rem;
+  --body-xs: 1.4rem;
+}
+
+/* @media screen and (min-width: 1048px) {
+    html {
+        font-size: 19px;
+    }
+} */
+
+html {
+  font-size: 60%;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+ul {
+    list-style: none
+}
+
+button,input,select,textarea {
+    margin: 0
+}
+
+html {
+    box-sizing: border-box
+}
+
+* {
+    box-sizing: inherit
+}
+
+:after,:before {
+    box-sizing: inherit
+}
+
+audio,embed,img,object,video {
+    max-width: 100%
+}
+
+iframe {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,th {
+    padding: 0;
+    text-align: left
+}
+
+html {
+    background-color: #fff;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%
+}
+
+article,aside,figure,footer,header,hgroup,section {
+    display: block
+}
+
+body,button,input,select,textarea {
+    font-family: ASTTCommons,BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+code,pre {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    font-family: monospace
+}
+
+body {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5
+}
+
+a {
+    color: #002877;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a strong {
+    color: currentColor
+}
+
+a:hover {
+    color: #002877
+}
+
+code {
+    background-color: #f5f5f5;
+    color: #ff1c26;
+    font-size: .875em;
+    font-weight: 400;
+    padding: .25em .5em .25em
+}
+
+hr {
+    background-color: #d8d8d8;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 1.5rem 0
+}
+
+img {
+    height: auto;
+    max-width: 100%
+}
+
+input[type=checkbox],input[type=radio] {
+    vertical-align: baseline
+}
+
+small {
+    font-size: .875em
+}
+
+span {
+    font-style: inherit;
+    font-weight: inherit
+}
+
+strong {
+    color: #000;
+    font-weight: 800
+}
+
+pre {
+    -webkit-overflow-scrolling: touch;
+    background-color: #f5f5f5;
+    color: #414042;
+    font-size: .875em;
+    overflow-x: auto;
+    padding: 1.25rem 1.5rem;
+    white-space: pre;
+    word-wrap: normal
+}
+
+pre code {
+    background-color: transparent;
+    color: currentColor;
+    font-size: 1em;
+    padding: 0
+}
+
+table td,table th {
+    text-align: left;
+    vertical-align: top
+}
+
+table th {
+    color: #000
+}

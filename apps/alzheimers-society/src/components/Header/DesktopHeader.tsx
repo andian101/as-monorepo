@@ -1,14 +1,33 @@
+"use client";
+
 import { useState } from "react";
 import "./desktopHeader.css";
+import { Subsection } from "./SubSection";
 
-export const DesktopHeader = () => {
+export const DesktopHeader = ({ data, subNavData }) => {
   const [a, setA] = useState(false);
   const [b, setB] = useState(false);
   const [c, setC] = useState(false);
   const [d, setD] = useState(false);
   const [e, setE] = useState(false);
 
-  const handleClick = (target: string) => {
+  const isOpen = (num: number) => {
+    if (num === 0 && a) return true;
+    if (num === 1 && b) return true;
+    if (num === 2 && c) return true;
+    if (num === 3 && d) return true;
+    if (num === 4 && e) return true;
+    return false;
+  };
+
+  const handleClick = (num: number) => {
+    let target;
+    if (num === 0) target = "a";
+    if (num === 1) target = "b";
+    if (num === 2) target = "c";
+    if (num === 3) target = "d";
+    if (num === 4) target = "e";
+
     setA(false);
     setB(false);
     setC(false);
@@ -56,248 +75,32 @@ export const DesktopHeader = () => {
             className='menu menu--desktop list--inline'
             data-js-processed='true'
           >
-            <li
-              className={
-                "menu__item menu__item--first-level " +
-                (a ? "menu__item--expanded" : "")
-              }
-            >
-              <a
-                className='menu__link menu__link--with-sub expander-toggle'
-                aria-expanded='false'
-                aria-haspopup='true'
-                onClick={() => handleClick("a")}
-                data-once='header'
-                style={{ cursor: "pointer" }}
-              >
-                About dementia
-              </a>
-
-              <ul
-                className={
-                  "menu menu--desktop menu--sub menu--sub-1 list--inline " +
-                  (a ? "menu--sub--expanded" : "")
-                }
-              >
-                <div className='row menu--desktop__submenu-container'>
-                  <div className='col'>
-                    <li className='menu__item'>
-                      <a
-                        className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1'
-                        href='https://www.alzheimers.org.uk/about-dementia/types-dementia/what-is-dementia'
-                        data-once='header'
-                      >
-                        What is dementia?
-                      </a>
-
-                      <ul className='menu menu--desktop menu--sub menu--sub-1 menu--sub-2 list--inline'>
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/worried-about-memory-problems/do-i-have-dementia-signs'
-                            data-once='header'
-                          >
-                            Do I have dementia?
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/dementia-diagnosis/how-to-get-dementia-diagnosis/dementia-symptoms-checklist'
-                            data-once='header'
-                          >
-                            Dementia symptoms checklist
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/dementia-diagnosis'
-                            data-once='header'
-                          >
-                            Dementia diagnosis
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-
-                  <div className='col'>
-                    <li className='menu__item'>
-                      <a
-                        className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1'
-                        href='https://www.alzheimers.org.uk/about-dementia/types-dementia'
-                        data-once='header'
-                      >
-                        Types of dementia
-                      </a>
-
-                      <ul className='menu menu--desktop menu--sub menu--sub-1 menu--sub-2 list--inline'>
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/types-dementia/alzheimers-disease'
-                            data-once='header'
-                          >
-                            Alzheimer&apos;s disease
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/types-dementia/vascular-dementia'
-                            data-once='header'
-                          >
-                            Vascular dementia
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/types-dementia/alcohol-related-brain-damage-arbd'
-                            data-once='header'
-                          >
-                            Alcohol-related brain damage
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/types-dementia/frontotemporal-dementia'
-                            data-once='header'
-                          >
-                            Frontotemporal dementia
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/types-dementia/what-causes-young-onset-dementia'
-                            data-once='header'
-                          >
-                            Young-onset dementia
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-
-                  <div className='col'>
-                    <li className='menu__item'>
-                      <a
-                        className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1'
-                        href='https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis'
-                        data-once='header'
-                      >
-                        Stages and symptoms
-                      </a>
-
-                      <ul className='menu menu--desktop menu--sub menu--sub-1 menu--sub-2 list--inline'>
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/how-dementia-progresses/progression-stages-dementia'
-                            data-once='header'
-                          >
-                            Stages of dementia
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/stages-and-symptoms/later-stages-dementia'
-                            data-once='header'
-                          >
-                            Later stages of dementia
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/symptoms/behaviour-changes'
-                            data-once='header'
-                          >
-                            Changes in behaviour
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/how-dementia-changes-perception'
-                            data-once='header'
-                          >
-                            Changes in perception
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/stages-and-symptoms/dementia-symptoms/memory-loss'
-                            data-once='header'
-                          >
-                            Memory loss
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-
-                  <div className='col'>
-                    <li className='menu__item'>
-                      <a
-                        className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1'
-                        href='https://www.alzheimers.org.uk/about-dementia/managing-the-risk-of-dementia'
-                        data-once='header'
-                      >
-                        Cause and prevention
-                      </a>
-
-                      <ul className='menu menu--desktop menu--sub menu--sub-1 menu--sub-2 list--inline'>
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/managing-the-risk-of-dementia/reduce-your-risk-of-dementia'
-                            data-once='header'
-                          >
-                            Reduce your risk of dementia
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/treatments'
-                            data-once='header'
-                          >
-                            Treatments and medications
-                          </a>
-                        </li>
-
-                        <li className='menu__item'>
-                          <a
-                            className='menu__link menu__link--with-sub menu__link--sub menu__link--sub-1 menu__link--sub-2'
-                            href='https://www.alzheimers.org.uk/about-dementia/is-dementia-hereditary'
-                            data-once='header'
-                          >
-                            Is dementia hereditary?
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </div>
-                </div>
-              </ul>
-            </li>
+            {data.map((navItem, index) => {
+              return (
+                <li
+                  key={navItem.title}
+                  className={
+                    "menu__item menu__item--first-level " +
+                    (a ? "menu__item--expanded" : "")
+                  }
+                >
+                  <a
+                    className='menu__link menu__link--with-sub expander-toggle'
+                    aria-expanded='false'
+                    aria-haspopup='true'
+                    onClick={() => handleClick(index)}
+                    data-once='header'
+                    style={{ cursor: "pointer" }}
+                  >
+                    {navItem.title}*
+                  </a>
+                  <Subsection
+                    data={subNavData.find((e) => e._id === navItem.subNavs[0])}
+                    open={isOpen(index)}
+                  />
+                </li>
+              );
+            })}
 
             <li
               className={
@@ -309,7 +112,7 @@ export const DesktopHeader = () => {
                 className='menu__link menu__link--with-sub expander-toggle'
                 aria-expanded='false'
                 aria-haspopup='true'
-                onClick={() => handleClick("b")}
+                onClick={() => handleClick(1)}
                 data-once='header'
                 style={{ cursor: "pointer" }}
               >
@@ -592,7 +395,7 @@ export const DesktopHeader = () => {
                 className='menu__link menu__link--with-sub expander-toggle'
                 aria-expanded='false'
                 aria-haspopup='true'
-                onClick={() => handleClick("c")}
+                onClick={() => handleClick(2)}
                 data-once='header'
               >
                 Get involved
@@ -844,7 +647,7 @@ export const DesktopHeader = () => {
                 className='menu__link menu__link--with-sub expander-toggle'
                 aria-expanded='false'
                 aria-haspopup='true'
-                onClick={() => handleClick("d")}
+                onClick={() => handleClick(3)}
                 data-once='header'
                 style={{ cursor: "pointer" }}
               >
@@ -1013,7 +816,7 @@ export const DesktopHeader = () => {
                 className='menu__link menu__link--with-sub expander-toggle'
                 aria-expanded='false'
                 aria-haspopup='true'
-                onClick={() => handleClick("e")}
+                onClick={() => handleClick(4)}
                 data-once='header'
                 style={{ cursor: "pointer" }}
               >

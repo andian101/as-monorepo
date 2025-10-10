@@ -146,7 +146,7 @@
 .header__donate-button p {
   margin: 0;
 }
-.header__donate-button .button {
+/* .header__donate-button .button {
   border-radius: 0;
   padding-left: var(--space-scale-2);
   padding-right: var(--space-scale-2);
@@ -157,7 +157,7 @@
     padding-left: var(--space-scale-4);
     padding-right: var(--space-scale-4);
   }
-}
+} */
 .header__search {
   display: none;
   width: 100%;
@@ -236,14 +236,14 @@
   .header__support-line p {
     margin: 0;
   }
-  .header__donate-button .button {
+  /* .header__donate-button .button {
     font-size: var(--body-large);
     line-height: 3.5625rem;
     height: 5.7rem;
     margin-left: 3rem;
     padding-left: 3.8rem;
     padding-right: 3.8rem;
-  }
+  } */
   .header__search {
     background-color: rgba(0,0,0,0);
     display: block;

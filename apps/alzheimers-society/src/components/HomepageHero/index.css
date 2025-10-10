@@ -1,0 +1,270 @@
+.banner-modal__inner {
+    background-color: #002877;
+    position: relative;
+    overflow: hidden
+}
+
+.banner-modal .banner-modal__content {
+    background: linear-gradient(359.76deg,rgba(0,0,0,.5) 46.27%,rgba(0,0,0,.5) 69.4%,rgba(0,0,0,0) 107.52%);
+    padding: 200px 20px 20px;
+    position: relative;
+    transition: opacity .2s ease-in,visibility .2s ease-in
+}
+
+.modal-open .banner-modal__content {
+    opacity: 0;
+    visibility: hidden
+}
+
+.banner-modal__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.banner-modal__title {
+    margin-bottom: 20px
+}
+
+.banner-modal__title .title {
+    color: #fff
+}
+
+.banner-modal__link .pattern--button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: auto
+}
+
+.banner-modal__button .button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: auto
+}
+
+.banner-modal__description {
+    background-color: #002877;
+    color: #fff;
+    font-weight: 700;
+    padding: .75rem;
+    position: relative
+}
+
+.banner-modal__modal {
+    background-color: rgba(0,40,119,.7);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in,visibility .2s ease-in
+}
+
+.modal-open .banner-modal__modal {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2
+}
+
+.banner-modal__modal-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 21px
+}
+
+.banner-modal__modal-content .field--field-cta {
+    margin-top: 10px
+}
+
+.banner-modal__modal-content .field--field-cta a {
+    font-size: 21px
+}
+
+.banner-modal__modal-content .field--field-cta a,.banner-modal__modal-content .field--field-cta a:visited {
+    color: #fff!important;
+    -webkit-text-decoration-color: #fff!important;
+    text-decoration-color: #fff!important
+}
+
+.banner-modal__close-button {
+    background-color: rgba(255,255,255,.88);
+    border: 0;
+    border-radius: 50%;
+    height: 57px;
+    width: 57px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px
+}
+
+.banner-modal__close-button .icon {
+    color: #002877;
+    font-size: 62px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.banner-modal__modal-title .title {
+    color: #fff
+}
+
+.banner-modal__modal-button {
+    margin-top: 10px
+}
+
+.banner-modal--is-slimmer .banner-modal__button--desktop,.banner-modal--is-slimmer .banner-modal__link--desktop {
+    display: none
+}
+
+.banner-modal--is-slimmer .banner-modal__button--mobile,.banner-modal--is-slimmer .banner-modal__link--mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 10px
+}
+
+.banner-modal--is-slimmer .banner-modal__button--mobile .pattern--button,.banner-modal--is-slimmer .banner-modal__link--mobile .pattern--button {
+    width: 100%
+}
+
+.banner-modal--has-mobile-img .banner-modal__image--desktop {
+    display: none
+}
+
+@media only screen and (max-width: 700px) {
+    .banner-modal__title .title {
+        font-size:1.5rem
+    }
+
+    .banner-modal__button {
+        margin-top: 10px
+    }
+
+    .banner-modal__image {
+        height: 85%
+    }
+
+    .banner-modal .banner-modal__content {
+        background: linear-gradient(359.76deg,rgba(0,0,0,.5) 23.27%,rgba(0,0,0,.5) 7.4%,rgba(0,0,0,0) 47.52%)
+    }
+}
+
+@media screen and (min-width: 769px),print {
+    .banner-modal .banner-modal__content {
+        background:linear-gradient(91.99deg,rgba(0,0,0,.5) 62.14%,rgba(0,0,0,0) 98.25%);
+        padding: 100px 55px 55px 55px
+    }
+
+    .banner-modal__modal-buttons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-top: 20px
+    }
+
+    .banner-modal__modal-button {
+        margin-top: 0
+    }
+
+    .banner-modal__modal-button:nth-child(2) {
+        margin-left: 20px
+    }
+
+    .banner-modal__modal-content .field--field-cta {
+        margin-top: 20px
+    }
+
+    .banner-modal--is-slimmer .banner-modal__content {
+        padding: 30px 20px 40px
+    }
+
+    .banner-modal--is-slimmer .banner-modal__button--desktop,.banner-modal--is-slimmer .banner-modal__link--desktop {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex
+    }
+
+    .banner-modal--is-slimmer .banner-modal__button--mobile,.banner-modal--is-slimmer .banner-modal__link--mobile {
+        display: none
+    }
+
+    .banner-modal--has-mobile-img .banner-modal__image--mobile {
+        display: none
+    }
+
+    .banner-modal--has-mobile-img .banner-modal__image--desktop {
+        display: block
+    }
+}
+
+@media screen and (min-width: 1048px) {
+    .banner-modal__inner {
+        min-height:504px
+    }
+
+    .banner-modal .banner-modal__content {
+        min-height: 458px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: end;
+        padding: 55px
+    }
+
+    .banner-modal--is-slimmer .banner-modal__title {
+        width: 33%
+    }
+
+    .banner-modal--is-slimmer .banner-modal__title .title {
+        font-size: 1.8rem
+    }
+
+    .banner-modal--is-slimmer .banner-modal__inner {
+        min-height: unset
+    }
+
+    .banner-modal--is-slimmer .banner-modal__content {
+        min-height: unset;
+        display: block;
+        padding-bottom: 20px;
+        padding-top: 60px
+    }
+}

@@ -5,8 +5,9 @@ import "./header.css";
 import "./base.css";
 import "./tiles-grid.css";
 import { DesktopHeader } from "./DesktopHeader";
+import { Button } from "../../../../../packages/components/Button";
 
-export const Header = () => {
+export const Header = ({ data, subNavData }) => {
   return (
     <header className='header' id='header'>
       <div className='header__top'>
@@ -143,14 +144,14 @@ export const Header = () => {
                 <div className='header__donate-button'>
                   <div id='block-alzheimer-donate' className='block'>
                     <div className='text-long'>
-                      <p>
-                        <a
-                          className='button button--link'
-                          href='https://www.alzheimers.org.uk/get-involved/donate'
-                          data-once='header'
-                        >
-                          Donate
-                        </a>
+                      <p style={{ marginLeft: "1em" }}>
+                        <Button
+                          link='https://www.alzheimers.org.uk/get-involved/donate'
+                          title='Donate'
+                          onClick={() => {}}
+                          large
+                          square
+                        />
                       </p>
                     </div>
                   </div>
@@ -160,7 +161,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <DesktopHeader />
+      <DesktopHeader data={data} subNavData={subNavData} />
     </header>
   );
 };

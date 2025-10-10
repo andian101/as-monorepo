@@ -1,18 +1,21 @@
-// import { Accordian } from "../../../../../packages/components/Accordian";
+import { Accordian } from "../../../../../packages/components/Accordian";
 // import { Button } from "../../../../../packages/ui/src/stories/Button";
 import { Hero } from "../Hero";
 import { HowWweSupportYou } from "../HowWeSupportYou";
 import { LargeLinks } from "../LargeLinks";
 import { PrimaryInformation } from "../PrimaryInformation";
 import { ShareThisPage } from "../ShareThisPage";
+import { ShopItem } from "../ShopItem";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
 
 type ArticleProps = {
   data: Document;
+  locale?: string;
+  id: string;
 };
 
-export const Article = ({ data }: ArticleProps) => {
+export const Article = ({ data, locale, id }: ArticleProps) => {
   return (
     <article
       data-history-node-id='961'
@@ -22,7 +25,7 @@ export const Article = ({ data }: ArticleProps) => {
       {data?.hero?.text.json && data?.hero?.heroImage?.url && (
         <Hero
           content={documentToReactComponents(data.hero?.text.json)}
-          image={data.hero?.heroImage.url}
+          image={data.hero?.image.url}
         />
       )}
 
@@ -35,6 +38,11 @@ export const Article = ({ data }: ArticleProps) => {
         </a>
         <div className='row'>
           <div id='main-body-content' className='main-content' tabIndex={-1}>
+            {locale === "cy" ? (
+              <a href={`/about-dementia/${id}`}>English version</a>
+            ) : (
+              <a href={`/about-dementia/${id}?locale=cy`}>Welsh version</a>
+            )}
             {data?.descriptionContent &&
               documentToReactComponents(data?.descriptionContent.json)}
             {data?.fixedContentTitle && (
@@ -65,21 +73,35 @@ export const Article = ({ data }: ArticleProps) => {
               </div>
             )}
 
+            {data?.shopCollection?.items.length > 0 && (
+              <div className='row'>
+                {data.shopCollection.items.map((item, index) => (
+                  <ShopItem
+                    key={index}
+                    image={item.cardTitle_data.featuredImage.url}
+                    link={item.cardTitle_data.onlineStoreUrl}
+                    title={item.cardTitle_data.title}
+                    description={item.cardTitle_data.description}
+                  />
+                ))}
+              </div>
+            )}
+
             <div className='field field--name-field-main-content field--type-entity-reference-revisions field--label-hidden field__items'>
               {data?.articleElementsCollection.items.map((item, index) => {
-                // if (item.__typename === "Accordian") {
-                //   return (
-                //     <Accordian
-                //       key={index}
-                //       title={item.title}
-                //       content={
-                //         item.content
-                //           ? documentToReactComponents(item.content.json)
-                //           : null
-                //       }
-                //     />
-                //   );
-                // }
+                if (item.__typename === "Accordian") {
+                  return (
+                    <Accordian
+                      key={index}
+                      title={item.title}
+                      content={
+                        item.content
+                          ? documentToReactComponents(item.content.json)
+                          : null
+                      }
+                    />
+                  );
+                }
 
                 if (item.__typename === "TextField" && item.content) {
                   return (
