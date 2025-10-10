@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Accordian } from "../../../../../packages/components/Accordian";
 // import { Button } from "../../../../../packages/ui/src/stories/Button";
 import { Hero } from "../Hero";
@@ -30,18 +31,14 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
       )}
 
       <div className='two-column__wrapper container'>
-        <a
-          href='#main-body-content'
-          className='visually-hidden focusable skip-to-main-content skip-to-main-content--hidden'
-        >
-          Skip navigation menu
-        </a>
         <div className='row'>
           <div id='main-body-content' className='main-content' tabIndex={-1}>
             {locale === "cy" ? (
-              <a href={`/about-dementia/${id}`}>English version</a>
+              <Link href={`/about-dementia/${id}`}>English version</Link>
             ) : (
-              <a href={`/about-dementia/${id}?locale=cy`}>Welsh version</a>
+              <Link href={`/about-dementia/${id}?locale=cy`}>
+                Welsh version
+              </Link>
             )}
             {data?.descriptionContent &&
               documentToReactComponents(data?.descriptionContent.json)}
@@ -213,7 +210,7 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
 
                     <div className='tile-card-image__content'>
                       <h3 className='heading heading--sub heading--small'>
-                        <a
+                        <Link
                           className='link link--inline-icon link--plain link--overlay heading__link'
                           aria-describedby='tile-card-image-951-277'
                           href='/about-dementia/dementia-diagnosis/how-to-get-dementia-diagnosis/dementia-symptoms-checklist'
@@ -222,7 +219,7 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
                           <span className='link__content link__content--inline-icon link__content--plain'>
                             Dementia symptoms checklist
                           </span>
-                        </a>
+                        </Link>
                       </h3>
 
                       <p className='paragraph' id='tile-card-image-951-277'>
@@ -309,7 +306,7 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
 
                     <div className='tile-card-image__content'>
                       <h3 className='heading heading--sub heading--small'>
-                        <a
+                        <Link
                           className='link link--inline-icon link--plain link--overlay heading__link'
                           aria-describedby='tile-card-image-891-539'
                           href='/about-dementia/dementia-diagnosis'
@@ -318,7 +315,7 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
                           <span className='link__content link__content--inline-icon link__content--plain'>
                             Dementia diagnosis
                           </span>
-                        </a>
+                        </Link>
                       </h3>
 
                       <p className='paragraph' id='tile-card-image-891-539'>
@@ -407,7 +404,7 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
 
                     <div className='tile-card-image__content'>
                       <h3 className='heading heading--sub heading--small'>
-                        <a
+                        <Link
                           className='link link--inline-icon link--plain link--overlay heading__link'
                           aria-describedby='tile-card-image-137'
                           href='https://www.alzheimers.org.uk/blog/four-years-for-diagnosis-after-misdiagnosed'
@@ -417,7 +414,7 @@ export const Article = ({ data, locale, id }: ArticleProps) => {
                             Four years to get a diagnosis after being
                             misdiagnosed
                           </span>
-                        </a>
+                        </Link>
                       </h3>
 
                       <p className='paragraph' id='tile-card-image-137'>

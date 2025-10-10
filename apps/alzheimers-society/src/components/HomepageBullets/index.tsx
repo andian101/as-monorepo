@@ -1,7 +1,11 @@
 import "./index.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export const HomepageBullets = ({ bullets }: { bullets: Array<any> }) => {
+export const HomepageBullets = ({
+  bullets
+}: {
+  bullets: Array<{ json: unknown }>;
+}) => {
   return (
     <div className='content is-fullwidth-extended has-padding-horizontal'>
       <div className='is-fullwidth'>

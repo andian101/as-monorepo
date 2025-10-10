@@ -58,7 +58,7 @@ export default async function Home() {
       >
         <div className='layout__region layout__region--content'>
           <h2 className='title is-2' data-content-type='title'>
-            What we're doing now
+            What we&apos;re doing now
           </h2>
         </div>
 
