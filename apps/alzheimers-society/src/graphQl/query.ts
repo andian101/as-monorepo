@@ -76,6 +76,10 @@ export const GET_ARTICLE = gql`
   }
 `;
 
+export const GET_TRIAL = gql`
+//  PUT QUERY HERE
+`;
+
 export const GET_HOMEPAGE = gql`
   query GetHomePage($locale: String) {
     homePageCollection(limit: 1, locale: $locale) {
