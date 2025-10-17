@@ -77,7 +77,62 @@ export const GET_ARTICLE = gql`
 `;
 
 export const GET_TRIAL = gql`
-//  PUT QUERY HERE
+  query GetTrialBySlug($slug: String!) {
+  trialCollection(where: {slug: $slug} ) {
+    items {
+      trialTitle,
+      trialAcronym,
+  		types,
+      status,
+      phase,
+      details {
+        json
+      }
+      accordionsCollection {
+        items {
+          title,
+          content {
+            json
+          }
+        }
+      }
+      startDate,
+      endDate,
+      footerText {
+        json
+      }
+    }
+  }
+}
+`;
+
+export const SEARCH_TRIALS = gql`
+  query SearchTrials($searchTerm: String!) {
+    trialCollection(
+      limit: 50,
+      order: [sys_publishedAt_DESC, trialTitle_ASC],
+      where: {
+        OR: [
+          { trialTitle_contains: $searchTerm },    # Search in the Title field
+          { trialAcronym_contains: $searchTerm },  # Search in the Content field
+          { details_contains: $searchTerm }      # Search in the Type field
+        ]
+      }
+    ) {
+      total
+      items {
+        sys {
+          id
+        }
+        trialTitle
+        trialAcronym
+        status
+        types
+        phase
+        slug
+      }
+    }
+  }
 `;
 
 export const GET_HOMEPAGE = gql`
